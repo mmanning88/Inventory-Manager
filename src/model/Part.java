@@ -1,7 +1,7 @@
 //Author: Matthew Manning
 package model;
 
-
+//Parent class for parts, will be inherted by InHouse and Outsourced classes
 public abstract class Part {
     
     private int id;

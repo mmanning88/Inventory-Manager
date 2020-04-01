@@ -129,7 +129,7 @@ public class AddProductController implements Initializable {
         double price = Double.parseDouble(productPriceTxt.getText());
         int min = Integer.parseInt(productMinTxt.getText());
         int max = Integer.parseInt(productMaxTxt.getText());
-        
+        //Exception handling for creating product with no name
         if (name.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Product Name Error");
@@ -137,7 +137,7 @@ public class AddProductController implements Initializable {
             alert.showAndWait();
             return;
         }
-        
+        //Exception handling for product with 0 or less price
         if (price == 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Product Price Error");
@@ -177,7 +177,7 @@ public class AddProductController implements Initializable {
             alert.showAndWait();
             return;
         }
-        
+        //Exception handling for product having a value less than sum of parts that make up product
         for (Part part : partsToSave) {
             double sum =+ part.getPrice();
             if (sum > Double.parseDouble(productPriceTxt.getText())) {
@@ -202,7 +202,7 @@ public class AddProductController implements Initializable {
         } catch (NumberFormatException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Product Error");
-            alert.setContentText("Fill all fields before saving");
+            alert.setContentText("Fill all fields before saving"); //Product must have all fields filled in order to be created
             alert.showAndWait();  
         }
     }

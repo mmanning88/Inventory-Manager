@@ -4,6 +4,7 @@ package model;
 
 public class InHouse extends Part {
     
+    //Machine ID non-inhertied attribute
     private int machineId;
     
     public InHouse(int id, int stock, int min, int max, String name, double price, int machineId) {

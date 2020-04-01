@@ -107,7 +107,7 @@ public class ModifyProductController implements Initializable {
         double price = Double.parseDouble(productPriceTxt.getText());
         int min = Integer.parseInt(productMinTxt.getText());
         int max = Integer.parseInt(productMaxTxt.getText());
-        
+        //Exception handling for business rules
         if (name.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Product Name Error");

@@ -82,7 +82,7 @@ public class ModifyPartController implements Initializable {
         double price = Double.parseDouble(partPriceTxt.getText());
         int min = Integer.parseInt(partMinTxt.getText());
         int max = Integer.parseInt(partMaxTxt.getText());
-        
+        //Exception handling for business rules
         if (name.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Part Name Error");

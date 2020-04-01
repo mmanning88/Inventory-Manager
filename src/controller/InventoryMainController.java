@@ -129,8 +129,7 @@ public class InventoryMainController implements Initializable {
     @FXML
     void onActionExit(ActionEvent event) {
         
-        
-        System.exit(0);
+        System.exit(0); //completely terminates JVM
 
     }
     
@@ -172,7 +171,7 @@ public class InventoryMainController implements Initializable {
         
         Product selectedProduct = productTableView.getSelectionModel().getSelectedItem();
         InventoryMainController.modifyIndex = getAllProducts().indexOf(selectedProduct);
-        
+        //Exception handling for when no product is selected before trying to modify
         if (selectedProduct == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Warning Dialog");
@@ -222,6 +221,7 @@ public class InventoryMainController implements Initializable {
         Inventory.getFilteredParts().clear();
         
         String search = partsSearchTxt.getText();
+        //Exception handling for no string in searchbar before search button clicked
         if (search.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Warning Dialog");

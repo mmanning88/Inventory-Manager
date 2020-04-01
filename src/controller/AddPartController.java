@@ -72,7 +72,7 @@ public class AddPartController implements Initializable {
         double price = Double.parseDouble(partPriceTxt.getText());
         int min = Integer.parseInt(partMinTxt.getText());
         int max = Integer.parseInt(partMaxTxt.getText());
-        
+        //Exception handling for trying to create part with no name
         if (name.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Part Name Error");
@@ -80,7 +80,7 @@ public class AddPartController implements Initializable {
             alert.showAndWait();
             return;
         }
-        
+        //Exception handling for trying to create part with 0 price
         if (price == 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Part Price Error");
@@ -88,7 +88,7 @@ public class AddPartController implements Initializable {
             alert.showAndWait();
             return;
         }
-      
+      //Exception handling for creating a part with stock not inclusive with min or max
         if (stock < min || stock > max) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Inventory Error");
@@ -104,7 +104,7 @@ public class AddPartController implements Initializable {
             alert.showAndWait();
             return;
         }
-        
+        //Exception handling for creating part with stock less than 0
         if (min < 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Inventory");

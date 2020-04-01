@@ -28,7 +28,7 @@ public class InventoryProgramMM extends Application {
 
     public static void main(String[] args) {
         
-        
+        //Initial data to be loaded into Inventory. More can be added through Inventory methods
         InHouse part1 = new InHouse(getPartCountID(), 5, 2, 6, "IHPart1", 10.00, 101);
         InHouse part2 = new InHouse(getPartCountID(), 0, 0, 4, "IHPart2", 40.50, 102);
         InHouse part3 = new InHouse(getPartCountID(), 8, 5, 50, "IHPart3", 5.00, 103);
